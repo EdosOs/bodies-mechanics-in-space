@@ -1,0 +1,2258 @@
+
+Engineering Optimization
+Engineering Optimization: Theory and Practice, Fourth Edition Singiresu S. Rao
+Copyright © 2009 by John Wiley & Sons, Inc.
+Engineering Optimization
+Theory and Practice
+Fourth Edition
+Singiresu S. Rao
+JOHN WILEY & SONS, INC.
+This book is printed on acid-free paper.
+Copyright c 2009 by John Wiley & Sons, Inc. All rights reserved
+Published by John Wiley & Sons, Inc., Hoboken, New Jersey
+Published simultaneously in Canada
+No part of this publication may be reproduced, stored in a retrieval system, or transmitted in any form or
+by any means, electronic, mechanical, photocopying, recording, scanning, or otherwise, except as permitted
+under Section 107 or 108 of the 1976 United States Copyright Act, without either the prior written permission
+of the Publisher, or authorization through payment of the appropriate per-copy fee to the Copyright Clearance
+Center, 222 Rosewood Drive, Danvers, MA 01923, (978) 750– 8400, fax (978) 646– 8600, or on the web
+at www.copyright.com. Requests to the Publisher for permission should be addressed to the Permissions
+Department, John Wiley & Sons, Inc., 111 River Street, Hoboken, NJ 07030, (201) 748– 6011, fax (201)
+748– 6008, or online at www.wiley.com/go/permissions.
+Limit of Liability/Disclaimer of Warranty: While the publisher and the author have used their best efforts in
+preparing this book, they make no representations or warranties with respect to the accuracy or completeness
+of the contents of this book and specifically disclaim any implied warranties of merchantability or fitness
+for a particular purpose. No warranty may be created or extended by sales representatives or written sales
+materials. The advice and strategies contained herein may not be suitable for your situation. You should
+consult with a professional where appropriate. Neither the publisher nor the author shall be liable for any loss
+of profit or any other commercial damages, including but not limited to special, incidental, consequential,
+or other damages.
+For general information about our other products and services, please contact our Customer Care Department
+within the United States at (800) 762– 2974, outside the United States at (317) 572– 3993 or fax (317)
+572– 4002.
+Wiley also publishes its books in a variety of electronic formats. Some content that appears in print may
+not be available in electronic books. For more information about Wiley products, visit our web site at
+www.wiley.com.
+Library of Congress Cataloging-in-Publication Data:
+Rao, S. S.
+Engineering optimization : theory and practice / Singiresu S. Rao.– 4th ed.
+p. cm.
+Includes index.
+ISBN 978-0-470-18352-6 (cloth)
+1. Engineering—Mathematical models. 2. Mathematical optimization. I. Title.
+TA342.R36 2009
+620.001′5196— dc22
+2009018559
+Printed in the United States of America
+10 9 8 7 6 5 4 3 2 1
+
+Contents
+Preface xvii
+1 Introduction to Optimization 1
+1.1 Introduction 1
+1.2 Historical Development 3
+1.3 Engineering Applications of Optimization 5
+1.4 Statement of an Optimization Problem 6
+1.4.1 Design Vector 6
+1.4.2 Design Constraints 7
+1.4.3 Constraint Surface 8
+1.4.4 Objective Function 9
+1.4.5 Objective Function Surfaces 9
+1.5 Classification of Optimization Problems 14
+1.5.1 Classification Based on the Existence of Constraints 14
+1.5.2 Classification Based on the Nature of the Design Variables 15
+1.5.3 Classification Based on the Physical Structure of the Problem 16
+1.5.4 Classification Based on the Nature of the Equations Involved 19
+1.5.5 Classification Based on the Permissible Values of the Design Variables 28
+1.5.6 Classification Based on the Deterministic Nature of the Variables 29
+1.5.7 Classification Based on the Separability of the Functions 30
+1.5.8 Classification Based on the Number of Objective Functions 32
+1.6 Optimization Techniques 35
+1.7 Engineering Optimization Literature 35
+1.8 Solution of Optimization Problems Using MATLAB 36
+References and Bibliography 39
+Review Questions 45
+Problems 46
+2 Classical Optimization Techniques 63
+2.1 Introduction 63
+2.2 Single-Variable Optimization 63
+2.3 Multivariable Optimization with No Constraints 68
+2.3.1 Semidefinite Case 73
+2.3.2 Saddle Point 73
+2.4 Multivariable Optimization with Equality Constraints 75
+2.4.1 Solution by Direct Substitution 76
+2.4.2 Solution by the Method of Constrained Variation 77
+2.4.3 Solution by the Method of Lagrange Multipliers 85
+vii
+viii Contents
+2.5 Multivariable Optimization with Inequality Constraints 93
+2.5.1 Kuhn–Tucker Conditions 98
+2.5.2 Constraint Qualification 98
+2.6 Convex Programming Problem 104
+References and Bibliography 105
+Review Questions 105
+Problems 106
+3 Linear Programming I: Simplex Method 119
+3.1 Introduction 119
+3.2 Applications of Linear Programming 120
+3.3 Standard Form of a Linear Programming Problem 122
+3.4 Geometry of Linear Programming Problems 124
+3.5 Definitions and Theorems 127
+3.6 Solution of a System of Linear Simultaneous Equations 133
+3.7 Pivotal Reduction of a General System of Equations 135
+3.8 Motivation of the Simplex Method 138
+3.9 Simplex Algorithm 139
+3.9.1 Identifying an Optimal Point 140
+3.9.2 Improving a Nonoptimal Basic Feasible Solution 141
+3.10 Two Phases of the Simplex Method 150
+3.11 MATLAB Solution of LP Problems 156
+References and Bibliography 158
+Review Questions 158
+Problems 160
+4 Linear Programming II: Additional Topics and Extensions 177
+4.1 Introduction 177
+4.2 Revised Simplex Method 177
+4.3 Duality in Linear Programming 192
+4.3.1 Symmetric Primal–Dual Relations 192
+4.3.2 General Primal–Dual Relations 193
+4.3.3 Primal–Dual Relations When the Primal Is in Standard Form 193
+4.3.4 Duality Theorems 195
+4.3.5 Dual Simplex Method 195
+4.4 Decomposition Principle 200
+4.5 Sensitivity or Postoptimality Analysis 207
+4.5.1 Changes in the Right-Hand-Side Constants bi 208
+4.5.2 Changes in the Cost Coefficients cj 212
+4.5.3 Addition of New Variables 214
+4.5.4 Changes in the Constraint Coefficients aij 215
+4.5.5 Addition of Constraints 218
+4.6 Transportation Problem 220
+Contents ix
+4.7 Karmarkar’s Interior Method 222
+4.7.1 Statement of the Problem 223
+4.7.2 Conversion of an LP Problem into the Required Form 224
+4.7.3 Algorithm 226
+4.8 Quadratic Programming 229
+4.9 MATLAB Solutions 235
+References and Bibliography 237
+Review Questions 239
+Problems 239
+5 Nonlinear Programming I: One-Dimensional Minimization Methods 248
+5.1 Introduction 248
+5.2 Unimodal Function 253
+ELIMINATION METHODS 254
+5.3 Unrestricted Search 254
+5.3.1 Search with Fixed Step Size 254
+5.3.2 Search with Accelerated Step Size 255
+5.4 Exhaustive Search 256
+5.5 Dichotomous Search 257
+5.6 Interval Halving Method 260
+5.7 Fibonacci Method 263
+5.8 Golden Section Method 267
+5.9 Comparison of Elimination Methods 271
+INTERPOLATION METHODS 271
+5.10 Quadratic Interpolation Method 273
+5.11 Cubic Interpolation Method 280
+5.12 Direct Root Methods 286
+5.12.1 Newton Method 286
+5.12.2 Quasi-Newton Method 288
+5.12.3 Secant Method 290
+5.13 Practical Considerations 293
+5.13.1 How to Make the Methods Efficient and More Reliable 293
+5.13.2 Implementation in Multivariable Optimization Problems 293
+5.13.3 Comparison of Methods 294
+5.14 MATLAB Solution of One-Dimensional Minimization Problems 294
+References and Bibliography 295
+Review Questions 295
+Problems 296
+x Contents
+6 Nonlinear Programming II: Unconstrained Optimization Techniques 301
+6.1 Introduction 301
+6.1.1 Classification of Unconstrained Minimization Methods 304
+6.1.2 General Approach 305
+6.1.3 Rate of Convergence 305
+6.1.4 Scaling of Design Variables 305
+DIRECT SEARCH METHODS 309
+6.2 Random Search Methods 309
+6.2.1 Random Jumping Method 311
+6.2.2 Random Walk Method 312
+6.2.3 Random Walk Method with Direction Exploitation 313
+6.2.4 Advantages of Random Search Methods 314
+6.3 Grid Search Method 314
+6.4 Univariate Method 315
+6.5 Pattern Directions 318
+6.6 Powell’s Method 319
+6.6.1 Conjugate Directions 319
+6.6.2 Algorithm 323
+6.7 Simplex Method 328
+6.7.1 Reflection 328
+6.7.2 Expansion 331
+6.7.3 Contraction 332
+INDIRECT SEARCH (DESCENT) METHODS 335
+6.8 Gradient of a Function 335
+6.8.1 Evaluation of the Gradient 337
+6.8.2 Rate of Change of a Function along a Direction 338
+6.9 Steepest Descent (Cauchy) Method 339
+6.10 Conjugate Gradient (Fletcher–Reeves) Method 341
+6.10.1 Development of the Fletcher–Reeves Method 342
+6.10.2 Fletcher–Reeves Method 343
+6.11 Newton’s Method 345
+6.12 Marquardt Method 348
+6.13 Quasi-Newton Methods 350
+6.13.1 Rank 1 Updates 351
+6.13.2 Rank 2 Updates 352
+6.14 Davidon–Fletcher–Powell Method 354
+6.15 Broyden–Fletcher–Goldfarb–Shanno Method 360
+6.16 Test Functions 363
+6.17 MATLAB Solution of Unconstrained Optimization Problems 365
+References and Bibliography 366
+Review Questions 368
+Problems 370
+Contents xi
+7 Nonlinear Programming III: Constrained Optimization Techniques 380
+7.1 Introduction 380
+7.2 Characteristics of a Constrained Problem 380
+DIRECT METHODS 383
+7.3 Random Search Methods 383
+7.4 Complex Method 384
+7.5 Sequential Linear Programming 387
+7.6 Basic Approach in the Methods of Feasible Directions 393
+7.7 Zoutendijk’s Method of Feasible Directions 394
+7.7.1 Direction-Finding Problem 395
+7.7.2 Determination of Step Length 398
+7.7.3 Termination Criteria 401
+7.8 Rosen’s Gradient Projection Method 404
+7.8.1 Determination of Step Length 407
+7.9 Generalized Reduced Gradient Method 412
+7.10 Sequential Quadratic Programming 422
+7.10.1 Derivation 422
+7.10.2 Solution Procedure 425
+INDIRECT METHODS 428
+7.11 Transformation Techniques 428
+7.12 Basic Approach of the Penalty Function Method 430
+7.13 Interior Penalty Function Method 432
+7.14 Convex Programming Problem 442
+7.15 Exterior Penalty Function Method 443
+7.16 Extrapolation Techniques in the Interior Penalty Function Method 447
+7.16.1 Extrapolation of the Design Vector X 448
+7.16.2 Extrapolation of the Function f 450
+7.17 Extended Interior Penalty Function Methods 451
+7.17.1 Linear Extended Penalty Function Method 451
+7.17.2 Quadratic Extended Penalty Function Method 452
+7.18 Penalty Function Method for Problems with Mixed Equality and Inequality
+Constraints 453
+7.18.1 Interior Penalty Function Method 454
+7.18.2 Exterior Penalty Function Method 455
+7.19 Penalty Function Method for Parametric Constraints 456
+7.19.1 Parametric Constraint 456
+7.19.2 Handling Parametric Constraints 457
+7.20 Augmented Lagrange Multiplier Method 459
+7.20.1 Equality-Constrained Problems 459
+7.20.2 Inequality-Constrained Problems 462
+7.20.3 Mixed Equality–Inequality-Constrained Problems 463
+xii Contents
+7.21 Checking the Convergence of Constrained Optimization Problems 464
+7.21.1 Perturbing the Design Vector 465
+7.21.2 Testing the Kuhn–Tucker Conditions 465
+7.22 Test Problems 467
+7.22.1 Design of a Three-Bar Truss 467
+7.22.2 Design of a Twenty-Five-Bar Space Truss 468
+7.22.3 Welded Beam Design 470
+7.22.4 Speed Reducer (Gear Train) Design 472
+7.22.5 Heat Exchanger Design 473
+7.23 MATLAB Solution of Constrained Optimization Problems 474
+References and Bibliography 476
+Review Questions 478
+Problems 480
+8 Geometric Programming 492
+8.1 Introduction 492
+8.2 Posynomial 492
+8.3 Unconstrained Minimization Problem 493
+8.4 Solution of an Unconstrained Geometric Programming Program Using Differential
+Calculus 493
+8.5 Solution of an Unconstrained Geometric Programming Problem Using
+Arithmetic–Geometric Inequality 500
+8.6 Primal–Dual Relationship and Sufficiency Conditions in the Unconstrained
+Case 501
+8.7 Constrained Minimization 508
+8.8 Solution of a Constrained Geometric Programming Problem 509
+8.9 Primal and Dual Programs in the Case of Less-Than Inequalities 510
+8.10 Geometric Programming with Mixed Inequality Constraints 518
+8.11 Complementary Geometric Programming 520
+8.12 Applications of Geometric Programming 525
+References and Bibliography 537
+Review Questions 539
+Problems 540
+9 Dynamic Programming 544
+9.1 Introduction 544
+9.2 Multistage Decision Processes 545
+9.2.1 Definition and Examples 545
+9.2.2 Representation of a Multistage Decision Process 546
+9.2.3 Conversion of a Nonserial System to a Serial System 548
+9.2.4 Types of Multistage Decision Problems 548
+9.3 Concept of Suboptimization and Principle of Optimality 549
+9.4 Computational Procedure in Dynamic Programming 553
+Contents xiii
+9.5 Example Illustrating the Calculus Method of Solution 555
+9.6 Example Illustrating the Tabular Method of Solution 560
+9.7 Conversion of a Final Value Problem into an Initial Value Problem 566
+9.8 Linear Programming as a Case of Dynamic Programming 569
+9.9 Continuous Dynamic Programming 573
+9.10 Additional Applications 576
+9.10.1 Design of Continuous Beams 576
+9.10.2 Optimal Layout (Geometry) of a Truss 577
+9.10.3 Optimal Design of a Gear Train 579
+9.10.4 Design of a Minimum-Cost Drainage System 579
+References and Bibliography 581
+Review Questions 582
+Problems 583
+10 Integer Programming 588
+10.1 Introduction 588
+INTEGER LINEAR PROGRAMMING 589
+10.2 Graphical Representation 589
+10.3 Gomory’s Cutting Plane Method 591
+10.3.1 Concept of a Cutting Plane 591
+10.3.2 Gomory’s Method for All-Integer Programming Problems 592
+10.3.3 Gomory’s Method for Mixed-Integer Programming Problems 599
+10.4 Balas’ Algorithm for Zero–One Programming Problems 604
+INTEGER NONLINEAR PROGRAMMING 606
+10.5 Integer Polynomial Programming 606
+10.5.1 Representation of an Integer Variable by an Equivalent System of Binary
+Variables 607
+10.5.2 Conversion of a Zero–One Polynomial Programming Problem into a
+Zero–One LP Problem 608
+10.6 Branch-and-Bound Method 609
+10.7 Sequential Linear Discrete Programming 614
+10.8 Generalized Penalty Function Method 619
+10.9 Solution of Binary Programming Problems Using MATLAB 624
+References and Bibliography 625
+Review Questions 626
+Problems 627
+11 Stochastic Programming 632
+11.1 Introduction 632
+11.2 Basic Concepts of Probability Theory 632
+11.2.1 Definition of Probability 632
+xiv Contents
+11.2.2 Random Variables and Probability Density Functions 633
+11.2.3 Mean and Standard Deviation 635
+11.2.4 Function of a Random Variable 638
+11.2.5 Jointly Distributed Random Variables 639
+11.2.6 Covariance and Correlation 640
+11.2.7 Functions of Several Random Variables 640
+11.2.8 Probability Distributions 643
+11.2.9 Central Limit Theorem 647
+11.3 Stochastic Linear Programming 647
+11.4 Stochastic Nonlinear Programming 652
+11.4.1 Objective Function 652
+11.4.2 Constraints 653
+11.5 Stochastic Geometric Programming 659
+References and Bibliography 661
+Review Questions 662
+Problems 663
+12 Optimal Control and Optimality Criteria Methods 668
+12.1 Introduction 668
+12.2 Calculus of Variations 668
+12.2.1 Introduction 668
+12.2.2 Problem of Calculus of Variations 669
+12.2.3 Lagrange Multipliers and Constraints 675
+12.2.4 Generalization 678
+12.3 Optimal Control Theory 678
+12.3.1 Necessary Conditions for Optimal Control 679
+12.3.2 Necessary Conditions for a General Problem 681
+12.4 Optimality Criteria Methods 683
+12.4.1 Optimality Criteria with a Single Displacement Constraint 683
+12.4.2 Optimality Criteria with Multiple Displacement Constraints 684
+12.4.3 Reciprocal Approximations 685
+References and Bibliography 689
+Review Questions 689
+Problems 690
+13 Modern Methods of Optimization 693
+13.1 Introduction 693
+13.2 Genetic Algorithms 694
+13.2.1 Introduction 694
+13.2.2 Representation of Design Variables 694
+13.2.3 Representation of Objective Function and Constraints 696
+13.2.4 Genetic Operators 697
+13.2.5 Algorithm 701
+Contents xv
+13.2.6 Numerical Results 702
+13.3 Simulated Annealing 702
+13.3.1 Introduction 702
+13.3.2 Procedure 703
+13.3.3 Algorithm 704
+13.3.4 Features of the Method 705
+13.3.5 Numerical Results 705
+13.4 Particle Swarm Optimization 708
+13.4.1 Introduction 708
+13.4.2 Computational Implementation of PSO 709
+13.4.3 Improvement to the Particle Swarm Optimization Method 710
+13.4.4 Solution of the Constrained Optimization Problem 711
+13.5 Ant Colony Optimization 714
+13.5.1 Basic Concept 714
+13.5.2 Ant Searching Behavior 715
+13.5.3 Path Retracing and Pheromone Updating 715
+13.5.4 Pheromone Trail Evaporation 716
+13.5.5 Algorithm 717
+13.6 Optimization of Fuzzy Systems 722
+13.6.1 Fuzzy Set Theory 722
+13.6.2 Optimization of Fuzzy Systems 725
+13.6.3 Computational Procedure 726
+13.6.4 Numerical Results 727
+13.7 Neural-Network-Based Optimization 727
+References and Bibliography 730
+Review Questions 732
+Problems 734
+14 Practical Aspects of Optimization 737
+14.1 Introduction 737
+14.2 Reduction of Size of an Optimization Problem 737
+14.2.1 Reduced Basis Technique 737
+14.2.2 Design Variable Linking Technique 738
+14.3 Fast Reanalysis Techniques 740
+14.3.1 Incremental Response Approach 740
+14.3.2 Basis Vector Approach 743
+14.4 Derivatives of Static Displacements and Stresses 745
+14.5 Derivatives of Eigenvalues and Eigenvectors 747
+14.5.1 Derivatives of λi 747
+14.5.2 Derivatives of Yi 748
+14.6 Derivatives of Transient Response 749
+14.7 Sensitivity of Optimum Solution to Problem Parameters 751
+14.7.1 Sensitivity Equations Using Kuhn–Tucker Conditions 752
+xvi Contents
+14.7.2 Sensitivity Equations Using the Concept of Feasible Direction 754
+14.8 Multilevel Optimization 755
+14.8.1 Basic Idea 755
+14.8.2 Method 756
+14.9 Parallel Processing 760
+14.10 Multiobjective Optimization 761
+14.10.1 Utility Function Method 763
+14.10.2 Inverted Utility Function Method 764
+14.10.3 Global Criterion Method 764
+14.10.4 Bounded Objective Function Method 764
+14.10.5 Lexicographic Method 765
+14.10.6 Goal Programming Method 765
+14.10.7 Goal Attainment Method 766
+14.11 Solution of Multiobjective Problems Using MATLAB 767
+References and Bibliography 768
+Review Questions 771
+Problems 772
+A Convex and Concave Functions 779
+B Some Computational Aspects of Optimization 784
+B.1 Choice of Method 784
+B.2 Comparison of Unconstrained Methods 784
+B.3 Comparison of Constrained Methods 785
+B.4 Availability of Computer Programs 786
+B.5 Scaling of Design Variables and Constraints 787
+B.6 Computer Programs for Modern Methods of Optimization 788
+References and Bibliography 789
+C Introduction to MATLAB 791
+C.1 Features and Special Characters 791
+C.2 Defining Matrices in MATLAB 792
+C.3 CREATING m-FILES 793
+C.4 Optimization Toolbox 793
+Answers to Selected Problems 795
+Index 803
+Preface
+The ever-increasing demand on engineers to lower production costs to withstand global
+competition has prompted engineers to look for rigorous methods of decision making, such as optimization methods, to design and produce products and systems both
+economically and efficiently. Optimization techniques, having reached a degree of
+maturity in recent years, are being used in a wide spectrum of industries, including
+aerospace, automotive, chemical, electrical, construction, and manufacturing industries.
+With rapidly advancing computer technology, computers are becoming more powerful,
+and correspondingly, the size and the complexity of the problems that can be solved
+using optimization techniques are also increasing. Optimization methods, coupled with
+modern tools of computer-aided design, are also being used to enhance the creative
+process of conceptual and detailed design of engineering systems.
+The purpose of this textbook is to present the techniques and applications of engineering optimization in a comprehensive manner. The style of the prior editions has
+been retained, with the theory, computational aspects, and applications of engineering
+optimization presented with detailed explanations. As in previous editions, essential
+proofs and developments of the various techniques are given in a simple manner
+without sacrificing accuracy. New concepts are illustrated with the help of numerical
+examples. Although most engineering design problems can be solved using nonlinear programming techniques, there are a variety of engineering applications for which
+other optimization methods, such as linear, geometric, dynamic, integer, and stochastic
+programming techniques, are most suitable. The theory and applications of all these
+techniques are also presented in the book. Some of the recently developed methods of
+optimization, such as genetic algorithms, simulated annealing, particle swarm optimization, ant colony optimization, neural-network-based methods, and fuzzy optimization,
+are also discussed. Favorable reactions and encouragement from professors, students,
+and other users of the book have provided me with the impetus to prepare this fourth
+edition of the book. The following changes have been made from the previous edition:
+• Some less-important sections were condensed or deleted.
+• Some sections were rewritten for better clarity.
+• Some sections were expanded.
+• A new chapter on modern methods of optimization is added.
+• Several examples to illustrate the use of Matlab for the solution of different types
+of optimization problems are given.
+Features
+Each topic in Engineering Optimization: Theory and Practice is self-contained, with all
+concepts explained fully and the derivations presented with complete details. The computational aspects are emphasized throughout with design examples and problems taken
+xvii
+xviii Preface
+from several fields of engineering to make the subject appealing to all branches of
+engineering. A large number of solved examples, review questions, problems,
+project-type problems, figures, and references are included to enhance the presentation
+of the material.
+Specific features of the book include:
+• More than 130 illustrative examples accompanying most topics.
+• More than 480 references to the literature of engineering optimization theory and
+applications.
+• More than 460 review questions to help students in reviewing and testing their
+understanding of the text material.
+• More than 510 problems, with solutions to most problems in the instructor’s
+manual.
+• More than 10 examples to illustrate the use of Matlab for the numerical solution
+of optimization problems.
+• Answers to review questions at the web site of the book, www.wiley.com/rao.
+I used different parts of the book to teach optimum design and engineering optimization courses at the junior/senior level as well as first-year-graduate-level at Indian
+Institute of Technology, Kanpur, India; Purdue University, West Lafayette, Indiana; and
+University of Miami, Coral Gables, Florida. At University of Miami, I cover Chapters 1,
+2, 3, 5, 6, and 7 and parts of Chapters 8, 10, 12, and 13 in a dual-level course entitled
+Mechanical System Optimization. In this course, a design project is also assigned to
+each student in which the student identifies, formulates, and solves a practical engineering problem of his/her interest by applying or modifying an optimization technique.
+This design project gives the student a feeling for ways that optimization methods work
+in practice. The book can also be used, with some supplementary material, for a second course on engineering optimization or optimum design or structural optimization.
+The relative simplicity with which the various topics are presented makes the book
+useful both to students and to practicing engineers for purposes of self-study. The book
+also serves as a reference source for different engineering optimization applications.
+Although the emphasis of the book is on engineering applications, it would also be useful to other areas, such as operations research and economics. A knowledge of matrix
+theory and differential calculus is assumed on the part of the reader.
+Contents
+The book consists of fourteen chapters and three appendixes. Chapter 1 provides an
+introduction to engineering optimization and optimum design and an overview of optimization methods. The concepts of design space, constraint surfaces, and contours of
+objective function are introduced here. In addition, the formulation of various types of
+optimization problems is illustrated through a variety of examples taken from various
+fields of engineering. Chapter 2 reviews the essentials of differential calculus useful
+in finding the maxima and minima of functions of several variables. The methods of
+constrained variation and Lagrange multipliers are presented for solving problems with
+equality constraints. The Kuhn–Tucker conditions for inequality-constrained problems
+are given along with a discussion of convex programming problems.
+Preface xix
+Chapters 3 and 4 deal with the solution of linear programming problems. The
+characteristics of a general linear programming problem and the development of the
+simplex method of solution are given in Chapter 3. Some advanced topics in linear
+programming, such as the revised simplex method, duality theory, the decomposition
+principle, and post-optimality analysis, are discussed in Chapter 4. The extension of
+linear programming to solve quadratic programming problems is also considered in
+Chapter 4.
+Chapters 5–7 deal with the solution of nonlinear programming problems. In
+Chapter 5, numerical methods of finding the optimum solution of a function of a single
+variable are given. Chapter 6 deals with the methods of unconstrained optimization.
+The algorithms for various zeroth-, first-, and second-order techniques are discussed
+along with their computational aspects. Chapter 7 is concerned with the solution of
+nonlinear optimization problems in the presence of inequality and equality constraints.
+Both the direct and indirect methods of optimization are discussed. The methods
+presented in this chapter can be treated as the most general techniques for the solution
+of any optimization problem.
+Chapter 8 presents the techniques of geometric programming. The solution techniques for problems of mixed inequality constraints and complementary geometric
+programming are also considered. In Chapter 9, computational procedures for solving
+discrete and continuous dynamic programming problems are presented. The problem
+of dimensionality is also discussed. Chapter 10 introduces integer programming and
+gives several algorithms for solving integer and discrete linear and nonlinear optimization problems. Chapter 11 reviews the basic probability theory and presents techniques
+of stochastic linear, nonlinear, and geometric programming. The theory and applications of calculus of variations, optimal control theory, and optimality criteria methods
+are discussed briefly in Chapter 12. Chapter 13 presents several modern methods of
+optimization including genetic algorithms, simulated annealing, particle swarm optimization, ant colony optimization, neural-network-based methods, and fuzzy system
+optimization. Several of the approximation techniques used to speed up the convergence of practical mechanical and structural optimization problems, as well as parallel
+computation and multiobjective optimization techniques are outlined in Chapter 14.
+Appendix A presents the definitions and properties of convex and concave functions.
+A brief discussion of the computational aspects and some of the commercial optimization programs is given in Appendix B. Finally, Appendix C presents a brief introduction
+to Matlab, optimization toolbox, and use of Matlab programs for the solution of optimization problems.
+Acknowledgment
+I wish to thank my wife, Kamala, for her patience, understanding, encouragement, and
+support in preparing the manuscript.
+S. S. Rao
+srao@miami.edu
+January 2009
+1
+Introduction to Optimization
+1.1 INTRODUCTION
+Optimization is the act of obtaining the best result under given circumstances. In design,
+construction, and maintenance of any engineering system, engineers have to take many
+technological and managerial decisions at several stages. The ultimate goal of all such
+decisions is either to minimize the effort required or to maximize the desired benefit.
+Since the effort required or the benefit desired in any practical situation can be expressed
+as a function of certain decision variables, optimization can be defined as the process
+of finding the conditions that give the maximum or minimum value of a function. It can
+be seen from Fig. 1.1 that if a point x
+∗
+corresponds to the minimum value of function
+f (x), the same point also corresponds to the maximum value of the negative of the
+function, −f (x). Thus without loss of generality, optimization can be taken to mean
+minimization since the maximum of a function can be found by seeking the minimum
+of the negative of the same function.
+In addition, the following operations on the objective function will not change the
+optimum solution x
+∗
+(see Fig. 1.2):
+1. Multiplication (or division) of f (x) by a positive constant c.
+2. Addition (or subtraction) of a positive constant c to (or from) f (x).
+There is no single method available for solving all optimization problems efficiently. Hence a number of optimization methods have been developed for solving
+different types of optimization problems. The optimum seeking methods are also known
+as mathematical programming techniques and are generally studied as a part of operations research. Operations research is a branch of mathematics concerned with the
+application of scientific methods and techniques to decision making problems and with
+establishing the best or optimal solutions. The beginnings of the subject of operations
+research can be traced to the early period of World War II. During the war, the British
+military faced the problem of allocating very scarce and limited resources (such as
+fighter airplanes, radars, and submarines) to several activities (deployment to numerous targets and destinations). Because there were no systematic methods available to
+solve resource allocation problems, the military called upon a team of mathematicians
+to develop methods for solving the problem in a scientific manner. The methods developed by the team were instrumental in the winning of the Air Battle by Britain. These
+methods, such as linear programming, which were developed as a result of research
+on (military) operations, subsequently became known as the methods of operations
+research.
+Engineering Optimization: Theory and Practice, Fourth Edition Singiresu S. Rao 1
+Copyright © 2009 by John Wiley & Sons, Inc.
+2 Introduction to Optimization
+Figure 1.1 Minimum of f (x) is same as maximum of −f (x).
+cf(x)
+cf(x)
+f(x)
+f(x)
+f(x)
+f(x) f(x)
+cf*
+f* f*
+x* x
+x* x
+c + f(x)
+c + f*
+Figure 1.2 Optimum solution of cf (x) or c + f (x) same as that of f (x).
+Table 1.1 lists various mathematical programming techniques together with other
+well-defined areas of operations research. The classification given in Table 1.1 is not
+unique; it is given mainly for convenience.
+Mathematical programming techniques are useful in finding the minimum of a
+function of several variables under a prescribed set of constraints. Stochastic process
+techniques can be used to analyze problems described by a set of random variables
+having known probability distributions. Statistical methods enable one to analyze the
+experimental data and build empirical models to obtain the most accurate representation of the physical situation. This book deals with the theory and application of
+mathematical programming techniques suitable for the solution of engineering design
+problems.
+1.2 Historical Development 3
+Table 1.1 Methods of Operations Research
+Mathematical programming or Stochastic process
+optimization techniques techniques Statistical methods
+Calculus methods Statistical decision theory Regression analysis
+Calculus of variations Markov processes Cluster analysis, pattern
+Nonlinear programming Queueing theory recognition
+Geometric programming Renewal theory Design of experiments
+Quadratic programming Simulation methods Discriminate analysis
+Linear programming Reliability theory (factor analysis)
+Dynamic programming
+Integer programming
+Stochastic programming
+Separable programming
+Multiobjective programming
+Network methods: CPM and PERT
+Game theory
+Modern or nontraditional optimization techniques
+Genetic algorithms
+Simulated annealing
+Ant colony optimization
+Particle swarm optimization
+Neural networks
+Fuzzy optimization
+1.2 HISTORICAL DEVELOPMENT
+The existence of optimization methods can be traced to the days of Newton, Lagrange,
+and Cauchy. The development of differential calculus methods of optimization was
+possible because of the contributions of Newton and Leibnitz to calculus. The foundations of calculus of variations, which deals with the minimization of functionals, were
+laid by Bernoulli, Euler, Lagrange, and Weirstrass. The method of optimization for constrained problems, which involves the addition of unknown multipliers, became known
+by the name of its inventor, Lagrange. Cauchy made the first application of the steepest descent method to solve unconstrained minimization problems. Despite these early
+contributions, very little progress was made until the middle of the twentieth century,
+when high-speed digital computers made implementation of the optimization procedures possible and stimulated further research on new methods. Spectacular advances
+followed, producing a massive literature on optimization techniques. This advancement also resulted in the emergence of several well-defined new areas in optimization
+theory.
+It is interesting to note that the major developments in the area of numerical methods of unconstrained optimization have been made in the United Kingdom only in the
+1960s. The development of the simplex method by Dantzig in 1947 for linear programming problems and the annunciation of the principle of optimality in 1957 by Bellman
+for dynamic programming problems paved the way for development of the methods
+of constrained optimization. Work by Kuhn and Tucker in 1951 on the necessary and
+4 Introduction to Optimization
+sufficiency conditions for the optimal solution of programming problems laid the foundations for a great deal of later research in nonlinear programming. The contributions
+of Zoutendijk and Rosen to nonlinear programming during the early 1960s have been
+significant. Although no single technique has been found to be universally applicable for nonlinear programming problems, work of Carroll and Fiacco and McCormick
+allowed many difficult problems to be solved by using the well-known techniques of
+unconstrained optimization. Geometric programming was developed in the 1960s by
+Duffin, Zener, and Peterson. Gomory did pioneering work in integer programming,
+one of the most exciting and rapidly developing areas of optimization. The reason for
+this is that most real-world applications fall under this category of problems. Dantzig
+and Charnes and Cooper developed stochastic programming techniques and solved
+problems by assuming design parameters to be independent and normally distributed.
+The desire to optimize more than one objective or goal while satisfying the physical limitations led to the development of multiobjective programming methods. Goal
+programming is a well-known technique for solving specific types of multiobjective
+optimization problems. The goal programming was originally proposed for linear problems by Charnes and Cooper in 1961. The foundations of game theory were laid by
+von Neumann in 1928 and since then the technique has been applied to solve several
+mathematical economics and military problems. Only during the last few years has
+game theory been applied to solve engineering design problems.
+Modern Methods of Optimization. The modern optimization methods, also sometimes called nontraditional optimization methods, have emerged as powerful and popular methods for solving complex engineering optimization problems in recent years.
+These methods include genetic algorithms, simulated annealing, particle swarm optimization, ant colony optimization, neural network-based optimization, and fuzzy optimization. The genetic algorithms are computerized search and optimization algorithms
+based on the mechanics of natural genetics and natural selection. The genetic algorithms
+were originally proposed by John Holland in 1975. The simulated annealing method
+is based on the mechanics of the cooling process of molten metals through annealing.
+The method was originally developed by Kirkpatrick, Gelatt, and Vecchi.
+The particle swarm optimization algorithm mimics the behavior of social organisms
+such as a colony or swarm of insects (for example, ants, termites, bees, and wasps), a
+flock of birds, and a school of fish. The algorithm was originally proposed by Kennedy
+and Eberhart in 1995. The ant colony optimization is based on the cooperative behavior
+of ant colonies, which are able to find the shortest path from their nest to a food
+source. The method was first developed by Marco Dorigo in 1992. The neural network
+methods are based on the immense computational power of the nervous system to solve
+perceptional problems in the presence of massive amount of sensory data through its
+parallel processing capability. The method was originally used for optimization by
+Hopfield and Tank in 1985. The fuzzy optimization methods were developed to solve
+optimization problems involving design data, objective function, and constraints stated
+in imprecise form involving vague and linguistic descriptions. The fuzzy approaches
+for single and multiobjective optimization in engineering design were first presented
+by Rao in 1986.
+1.3 Engineering Applications of Optimization 5
+1.3 ENGINEERING APPLICATIONS OF OPTIMIZATION
+Optimization, in its broadest sense, can be applied to solve any engineering problem.
+Some typical applications from different engineering disciplines indicate the wide scope
+of the subject:
+1. Design of aircraft and aerospace structures for minimum weight
+2. Finding the optimal trajectories of space vehicles
+3. Design of civil engineering structures such as frames, foundations, bridges,
+towers, chimneys, and dams for minimum cost
+4. Minimum-weight design of structures for earthquake, wind, and other types of
+random loading
+5. Design of water resources systems for maximum benefit
+6. Optimal plastic design of structures
+7. Optimum design of linkages, cams, gears, machine tools, and other mechanical
+components
+8. Selection of machining conditions in metal-cutting processes for minimum production cost
+9. Design of material handling equipment, such as conveyors, trucks, and cranes,
+for minimum cost
+10. Design of pumps, turbines, and heat transfer equipment for maximum efficiency
+11. Optimum design of electrical machinery such as motors, generators, and transformers
+12. Optimum design of electrical networks
+13. Shortest route taken by a salesperson visiting various cities during one tour
+14. Optimal production planning, controlling, and scheduling
+15. Analysis of statistical data and building empirical models from experimental
+results to obtain the most accurate representation of the physical phenomenon
+16. Optimum design of chemical processing equipment and plants
+17. Design of optimum pipeline networks for process industries
+18. Selection of a site for an industry
+19. Planning of maintenance and replacement of equipment to reduce operating
+costs
+20. Inventory control
+21. Allocation of resources or services among several activities to maximize the
+benefit
+22. Controlling the waiting and idle times and queueing in production lines to reduce
+the costs
+23. Planning the best strategy to obtain maximum profit in the presence of a competitor
+24. Optimum design of control systems
+6 Introduction to Optimization
+1.4 STATEMENT OF AN OPTIMIZATION PROBLEM
+An optimization or a mathematical programming problem can be stated as follows.
+Find X =
+
+
+
+x1
+x2
+.
+.
+.
+xn
+
+
+
+which minimizes f (X)
+subject to the constraints
+gj (X) ≤ 0, j = 1, 2, . . . , m
+lj (X) = 0, j = 1, 2, . . . , p
+(1.1)
+where X is an n-dimensional vector called the design vector, f (X) is termed the objective function, and gj (X) and lj (X) are known as inequality and equality constraints,
+respectively. The number of variables n and the number of constraints m and/or p
+need not be related in any way. The problem stated in Eq. (1.1) is called a constrained
+optimization problem.
+† Some optimization problems do not involve any constraints and
+can be stated as
+Find X =
+
+
+
+x1
+x2
+.
+.
+.
+xn
+
+
+
+which minimizes f (X) (1.2)
+Such problems are called unconstrained optimization problems.
+1.4.1 Design Vector
+Any engineering system or component is defined by a set of quantities some of which
+are viewed as variables during the design process. In general, certain quantities are
+usually fixed at the outset and these are called preassigned parameters. All the other
+quantities are treated as variables in the design process and are called design or decision
+variables xi, i = 1, 2, . . . , n. The design variables are collectively represented as a
+design vector X = {x1, x2, . . . , xn}
+T
+. As an example, consider the design of the gear
+pair shown in Fig. 1.3, characterized by its face width b, number of teeth T1 and
+T2, center distance d, pressure angle ψ, tooth profile, and material. If center distance
+d, pressure angle ψ, tooth profile, and material of the gears are fixed in advance,
+these quantities can be called preassigned parameters. The remaining quantities can be
+collectively represented by a design vector X = {x1, x2, x3}
+T = {b, T1, T2}
+T
+. If there are
+no restrictions on the choice of b, T1, and T2, any set of three numbers will constitute a
+design for the gear pair. If an n-dimensional Cartesian space with each coordinate axis
+representing a design variable xi (i = 1, 2, . . . , n) is considered, the space is called
+†
+In the mathematical programming literature, the equality constraints lj (X) = 0, j = 1, 2, . . . , p are often
+neglected, for simplicity, in the statement of a constrained optimization problem, although several methods
+are available for handling problems with equality constraints.
+1.4 Statement of an Optimization Problem 7
+Figure 1.3 Gear pair in mesh.
+the design variable space or simply design space. Each point in the n-dimensional
+design space is called a design point and represents either a possible or an impossible
+solution to the design problem. In the case of the design of a gear pair, the design
+point {1.0, 20, 40}
+T
+, for example, represents a possible solution, whereas the design
+point {1.0, −20, 40.5}
+T
+represents an impossible solution since it is not possible to
+have either a negative value or a fractional value for the number of teeth.
+1.4.2 Design Constraints
+In many practical problems, the design variables cannot be chosen arbitrarily; rather,
+they have to satisfy certain specified functional and other requirements. The restrictions
+that must be satisfied to produce an acceptable design are collectively called design
+constraints. Constraints that represent limitations on the behavior or performance of
+the system are termed behavior or functional constraints. Constraints that represent
+physical limitations on design variables, such as availability, fabricability, and transportability, are known as geometric or side constraints. For example, for the gear pair
+shown in Fig. 1.3, the face width b cannot be taken smaller than a certain value, due
+to strength requirements. Similarly, the ratio of the numbers of teeth, T1/T2, is dictated
+by the speeds of the input and output shafts, N1 and N2. Since these constraints depend
+on the performance of the gear pair, they are called behavior constraints. The values
+of T1 and T2 cannot be any real numbers but can only be integers. Further, there can
+be upper and lower bounds on T1 and T2 due to manufacturing limitations. Since these
+constraints depend on the physical limitations, they are called side constraints.
+8 Introduction to Optimization
+1.4.3 Constraint Surface
+For illustration, consider an optimization problem with only inequality constraints
+gj (X) ≤ 0. The set of values of X that satisfy the equation gj (X) = 0 forms a hypersurface in the design space and is called a constraint surface. Note that this is an
+(n − 1)-dimensional subspace, where n is the number of design variables. The constraint
+surface divides the design space into two regions: one in which gj (X) < 0 and the other
+in which gj (X) > 0. Thus the points lying on the hypersurface will satisfy the constraint
+gj (X) critically, whereas the points lying in the region where gj (X) > 0 are infeasible
+or unacceptable, and the points lying in the region where gj (X) < 0 are feasible or
+acceptable. The collection of all the constraint surfaces gj (X) = 0, j = 1, 2, . . . , m,
+which separates the acceptable region is called the composite constraint surface.
+Figure 1.4 shows a hypothetical two-dimensional design space where the infeasible
+region is indicated by hatched lines. A design point that lies on one or more than one
+constraint surface is called a bound point, and the associated constraint is called an
+active constraint. Design points that do not lie on any constraint surface are known as
+free points. Depending on whether a particular design point belongs to the acceptable
+or unacceptable region, it can be identified as one of the following four types:
+1. Free and acceptable point
+2. Free and unacceptable point
+3. Bound and acceptable point
+4. Bound and unacceptable point
+All four types of points are shown in Fig. 1.4.
+Figure 1.4 Constraint surfaces in a hypothetical two-dimensional design space.
+1.4 Statement of an Optimization Problem 9
+1.4.4 Objective Function
+The conventional design procedures aim at finding an acceptable or adequate design
+that merely satisfies the functional and other requirements of the problem. In general,
+there will be more than one acceptable design, and the purpose of optimization is
+to choose the best one of the many acceptable designs available. Thus a criterion
+has to be chosen for comparing the different alternative acceptable designs and for
+selecting the best one. The criterion with respect to which the design is optimized,
+when expressed as a function of the design variables, is known as the criterion or merit
+or objective function. The choice of objective function is governed by the nature of
+problem. The objective function for minimization is generally taken as weight in aircraft
+and aerospace structural design problems. In civil engineering structural designs, the
+objective is usually taken as the minimization of cost. The maximization of mechanical
+efficiency is the obvious choice of an objective in mechanical engineering systems
+design. Thus the choice of the objective function appears to be straightforward in most
+design problems. However, there may be cases where the optimization with respect
+to a particular criterion may lead to results that may not be satisfactory with respect
+to another criterion. For example, in mechanical design, a gearbox transmitting the
+maximum power may not have the minimum weight. Similarly, in structural design,
+the minimum weight design may not correspond to minimum stress design, and the
+minimum stress design, again, may not correspond to maximum frequency design. Thus
+the selection of the objective function can be one of the most important decisions in
+the whole optimum design process.
+In some situations, there may be more than one criterion to be satisfied simultaneously. For example, a gear pair may have to be designed for minimum weight
+and maximum efficiency while transmitting a specified horsepower. An optimization
+problem involving multiple objective functions is known as a multiobjective programming problem. With multiple objectives there arises a possibility of conflict, and one
+simple way to handle the problem is to construct an overall objective function as a
+linear combination of the conflicting multiple objective functions. Thus if f1(X) and
+f2(X) denote two objective functions, construct a new (overall) objective function for
+optimization as
+f (X) = α1f1(X) + α2f2(X) (1.3)
+where α1 and α2 are constants whose values indicate the relative importance of one
+objective function relative to the other.
+1.4.5 Objective Function Surfaces
+The locus of all points satisfying f (X) = C = constant forms a hypersurface in the
+design space, and each value of C corresponds to a different member of a family of
+surfaces. These surfaces, called objective function surfaces, are shown in a hypothetical
+two-dimensional design space in Fig. 1.5.
+Once the objective function surfaces are drawn along with the constraint surfaces,
+the optimum point can be determined without much difficulty. But the main problem
+is that as the number of design variables exceeds two or three, the constraint and
+objective function surfaces become complex even for visualization and the problem
+10 Introduction to Optimization
+Figure 1.5 Contours of the objective function.
+has to be solved purely as a mathematical problem. The following example illustrates
+the graphical optimization procedure.
+Example 1.1 Design a uniform column of tubular section, with hinge joints at both
+ends, (Fig. 1.6) to carry a compressive load P = 2500 kgf
+for minimum cost. The
+column is made up of a material that has a yield stress (σy ) of 500 kgf
+/cm2
+, modulus
+of elasticity (E) of 0.85 × 106 kgf
+/cm2
+, and weight density (ρ) of 0.0025 kgf
+/cm3
+.
+The length of the column is 250 cm. The stress induced in the column should be less
+than the buckling stress as well as the yield stress. The mean diameter of the column
+is restricted to lie between 2 and 14 cm, and columns with thicknesses outside the
+range 0.2 to 0.8 cm are not available in the market. The cost of the column includes
+material and construction costs and can be taken as 5W + 2d, where W is the weight
+in kilograms force and d is the mean diameter of the column in centimeters.
+SOLUTION The design variables are the mean diameter (d) and tube thickness (t):
+X =
+	
+x1
+x2
+
+
+=
+	
+d
+t
+
+
+(E1)
+The objective function to be minimized is given by
+f (X) = 5W + 2d = 5ρlπ dt + 2d = 9.82x1x2 + 2x1 (E2)
+1.4 Statement of an Optimization Problem 11
+i
+Figure 1.6 Tubular column under compression.
+The behavior constraints can be expressed as
+stress induced ≤ yield stress
+stress induced ≤ buckling stress
+The induced stress is given by
+induced stress = σi =
+P
+π dt
+=
+2500
+πx1x2
+(E3)
+The buckling stress for a pin-connected column is given by
+buckling stress = σb =
+Euler buckling load
+cross-sectional area
+=
+π
+2EI
+l
+2
+1
+π dt
+(E4)
+where
+I = second moment of area of the cross section of the column
+=
+π
+64
+(d4
+o − d
+4
+i
+)
+=
+π
+64
+(d2
+o + d
+2
+i
+)(do + di)(do − di) =
+π
+64
+[(d + t)2 + (d − t)2
+]
+× [(d + t) + (d − t)][(d + t) − (d − t)]
+=
+π
+8
+dt (d2 + t
+2
+) =
+π
+8
+x1x2(x2
+1 + x
+2
+2
+) (E5)
+12 Introduction to Optimization
+Thus the behavior constraints can be restated as
+g1(X) =
+2500
+πx1x2
+− 500 ≤ 0 (E6)
+g2(X) =
+2500
+πx1x2
+−
+π
+2
+(0.85 × 106
+)(x2
+1 + x
+2
+2
+)
+8(250)
+2
+≤ 0 (E7)
+The side constraints are given by
+2 ≤ d ≤ 14
+0.2 ≤ t ≤ 0.8
+which can be expressed in standard form as
+g3(X) = −x1 + 2.0 ≤ 0 (E8)
+g4(X) = x1 − 14.0 ≤ 0 (E9)
+g5(X) = −x2 + 0.2 ≤ 0 (E10)
+g6(X) = x2 − 0.8 ≤ 0 (E11)
+Since there are only two design variables, the problem can be solved graphically as
+shown below.
+First, the constraint surfaces are to be plotted in a two-dimensional design space
+where the two axes represent the two design variables x1 and x2. To plot the first
+constraint surface, we have
+g1(X) =
+2500
+πx1x2
+− 500 ≤ 0
+that is,
+x1x2 ≥ 1.593
+Thus the curve x1x2 = 1.593 represents the constraint surface g1(X) = 0. This curve
+can be plotted by finding several points on the curve. The points on the curve can be
+found by giving a series of values to x1 and finding the corresponding values of x2
+that satisfy the relation x1x2 = 1.593:
+x1 2.0 4.0 6.0 8.0 10.0 12.0 14.0
+x2 0.7965 0.3983 0.2655 0.1990 0.1593 0.1328 0.1140
+These points are plotted and a curve P1Q1 passing through all these points is drawn as
+shown in Fig. 1.7, and the infeasible region, represented by g1(X) > 0 or x1x2 < 1.593,
+is shown by hatched lines.† Similarly, the second constraint g2(X) ≤ 0 can be expressed
+as x1x2(x2
+1 + x
+2
+2
+) ≥ 47.3 and the points lying on the constraint surface g2(X) = 0 can
+be obtained as follows for x1x2(x2
+1 + x
+2
+2
+) = 47.3:
+†The infeasible region can be identified by testing whether the origin lies in the feasible or infeasible
+region.
+1.4 Statement of an Optimization Problem 13
+Figure 1.7 Graphical optimization of Example 1.1.
+x1 2 4 6 8 10 12 14
+x2 2.41 0.716 0.219 0.0926 0.0473 0.0274 0.0172
+These points are plotted as curve P2Q2, the feasible region is identified, and the infeasible region is shown by hatched lines as in Fig. 1.7. The plotting of side constraints
+is very simple since they represent straight lines. After plotting all the six constraints,
+the feasible region can be seen to be given by the bounded area ABCDEA.
+14 Introduction to Optimization
+Next, the contours of the objective function are to be plotted before finding the
+optimum point. For this, we plot the curves given by
+f (X) = 9.82x1x2 + 2x1 = c = constant
+for a series of values of c. By giving different values to c, the contours of f can be
+plotted with the help of the following points.
+For 9.82x1x2 + 2x1 = 50.0:
+x2 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8
+x1 16.77 12.62 10.10 8.44 7.24 6.33 5.64 5.07
+For 9.82x1x2 + 2x1 = 40.0:
+x2 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8
+x1 13.40 10.10 8.08 6.75 5.79 5.06 4.51 4.05
+For 9.82x1x2 + 2x1 = 31.58 (passing through the corner point C):
+x2 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8
+x1 10.57 7.96 6.38 5.33 4.57 4.00 3.56 3.20
+For 9.82x1x2 + 2x1 = 26.53 (passing through the corner point B):
+x2 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8
+x1 8.88 6.69 5.36 4.48 3.84 3.36 2.99 2.69
+For 9.82x1x2 + 2x1 = 20.0:
+x2 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8
+x1 6.70 5.05 4.04 3.38 2.90 2.53 2.26 2.02
+These contours are shown in Fig. 1.7 and it can be seen that the objective function
+cannot be reduced below a value of 26.53 (corresponding to point B) without violating
+some of the constraints. Thus the optimum solution is given by point B with d
+∗ =
+x
+∗
+1 = 5.44 cm and t
+∗ = x
+∗
+2 = 0.293 cm with fmin = 26.53.
+1.5 CLASSIFICATION OF OPTIMIZATION PROBLEMS
+Optimization problems can be classified in several ways, as described below.
+1.5.1 Classification Based on the Existence of Constraints
+As indicated earlier, any optimization problem can be classified as constrained or unconstrained, depending on whether constraints exist in the problem.
+1.5 Classification of Optimization Problems 15
+1.5.2 Classification Based on the Nature of the Design Variables
+Based on the nature of design variables encountered, optimization problems can be
+classified into two broad categories. In the first category, the problem is to find values
+to a set of design parameters that make some prescribed function of these parameters
+minimum subject to certain constraints. For example, the problem of minimum-weight
+design of a prismatic beam shown in Fig. 1.8a subject to a limitation on the maximum
+deflection can be stated as follows:
+Find X =
+	
+b
+d
+
+
+which minimizes
+f (X) = ρlbd
+(1.4)
+subject to the constraints
+δtip(X) ≤ δmax
+b ≥ 0
+d ≥ 0
+where ρ is the density and δtip is the tip deflection of the beam. Such problems are
+called parameter or static optimization problems. In the second category of problems,
+the objective is to find a set of design parameters, which are all continuous functions
+of some other parameter, that minimizes an objective function subject to a set of
+constraints. If the cross-sectional dimensions of the rectangular beam are allowed to
+vary along its length as shown in Fig. 1.8b, the optimization problem can be stated as
+Find X(t) =
+	
+b(t)
+d(t)
+
+which minimizes
+f [X(t)] = ρ
+ l
+0
+b(t) d(t) dt (1.5)
+subject to the constraints
+δtip[X(t)] ≤ δmax, 0 ≤ t ≤ l
+b(t) ≥ 0, 0 ≤ t ≤ l
+d(t) ≥ 0, 0 ≤ t ≤ l
+Figure 1.8 Cantilever beam under concentrated load.
+16 Introduction to Optimization
+Here the design variables are functions of the length parameter t. This type of problem,
+where each design variable is a function of one or more parameters, is known as a
+trajectory or dynamic optimization problem [1.55].
+1.5.3 Classification Based on the Physical Structure of the Problem
+Depending on the physical structure of the problem, optimization problems can be
+classified as optimal control and nonoptimal control problems.
+Optimal Control Problem. An optimal control (OC) problem is a mathematical programming problem involving a number of stages, where each stage evolves from the
+preceding stage in a prescribed manner. It is usually described by two types of variables: the control (design) and the state variables. The control variables define the
+system and govern the evolution of the system from one stage to the next, and the state
+variables describe the behavior or status of the system in any stage. The problem is
+to find a set of control or design variables such that the total objective function (also
+known as the performance index, PI) over all the stages is minimized subject to a
+set of constraints on the control and state variables. An OC problem can be stated as
+follows [1.55]:
+Find X which minimizes f (X) =
+
+l
+i=1
+fi(xi, yi) (1.6)
+subject to the constraints
+qi(xi, yi) + yi = yi+1, i = 1, 2, . . . , l
+gj (xj ) ≤ 0, j = 1, 2, . . . , l
+hk(yk) ≤ 0, k = 1, 2, . . . , l
+where xi
+is the ith control variable, yi
+the ith state variable, and fi
+the contribution
+of the ith stage to the total objective function; gj , hk, and qi are functions of xj , yk,
+and xi and yi
+, respectively, and l is the total number of stages. The control and state
+variables xi and yi can be vectors in some cases. The following example serves to
+illustrate the nature of an optimal control problem.
+Example 1.2 A rocket is designed to travel a distance of 12s in a vertically upward
+direction [1.39]. The thrust of the rocket can be changed only at the discrete points
+located at distances of 0, s, 2s, 3s, . . . , 12s. If the maximum thrust that can be developed at point i either in the positive or negative direction is restricted to a value of
+Fi
+, formulate the problem of minimizing the total time of travel under the following
+assumptions:
+1. The rocket travels against the gravitational force.
+2. The mass of the rocket reduces in proportion to the distance traveled.
+3. The air resistance is proportional to the velocity of the rocket.
+1.5 Classification of Optimization Problems 17
+Figure 1.9 Control points in the path of the rocket.
+SOLUTION Let points (or control points) on the path at which the thrusts of the
+rocket are changed be numbered as 1, 2, 3, . . . , 13 (Fig. 1.9). Denoting xi as the thrust,
+vi
+the velocity, ai
+the acceleration, and mi
+the mass of the rocket at point i, Newton’s
+second law of motion can be applied as
+net force on the rocket = mass × acceleration
+This can be written as
+thrust − gravitational force − air resistance = mass × acceleration
+18 Introduction to Optimization
+or
+xi − mig − k1vi = miai (E1)
+where the mass mi can be expressed as
+mi = mi−1 − k2s (E2)
+and k1 and k2 are constants. Equation (E1) can be used to express the acceleration, ai
+,
+as
+ai =
+xi
+mi
+− g −
+k1vi
+mi
+(E3)
+If ti denotes the time taken by the rocket to travel from point i to point i + 1, the
+distance traveled between the points i and i + 1 can be expressed as
+s = vi
+ti +
+1
+2
+ai
+t
+2
+i
+or
+1
+2
+t
+2
+i
+
+
+xi
+mi
+− g −
+k1vi
+mi
+
++ tivi − s = 0 (E4)
+from which ti can be determined as
+ti =
+−vi ±
+
+v
+2
+i + 2s
+
+
+xi
+mi
+− g −
+k1vi
+mi
+
+xi
+mi
+− g −
+k1vi
+mi
+(E5)
+Of the two values given by Eq. (E5), the positive value has to be chosen for ti
+. The
+velocity of the rocket at point i + 1, vi+1, can be expressed in terms of vi as (by
+assuming the acceleration between points i and i + 1 to be constant for simplicity)
+vi+1 = vi + ai
+ti (E6)
+The substitution of Eqs. (E3) and (E5) into Eq. (E6) leads to
+vi+1 =
+
+v
+2
+i + 2s
+
+
+xi
+mi
+− g −
+k1vi
+mi
+
+(E7)
+From an analysis of the problem, the control variables can be identified as the thrusts,
+xi
+, and the state variables as the velocities, vi
+. Since the rocket starts at point 1 and
+stops at point 13,
+v1 = v13 = 0 (E8)
+1.5 Classification of Optimization Problems 19
+Thus the problem can be stated as an OC problem as
+Find X =
+
+
+
+x1
+x2
+.
+.
+.
+x12
+
+
+
+which minimizes
+f (X) =
+
+12
+i=1
+ti =
+
+12
+i=1
+
+
+
+−vi +
+
+v
+2
+i + 2s
+
+
+xi
+mi
+− g −
+k1vi
+mi
+
+xi
+mi
+− g −
+k1vi
+mi
+
+
+
+subject to
+mi+1 = mi − k2s, i = 1, 2, . . . , 12
+vi+1 =
+
+v
+2
+i + 2s
+
+
+xi
+mi
+− g −
+k1vi
+mi
+
+, i = 1, 2, . . . , 12
+|xi
+| ≤ Fi, i = 1, 2, . . . , 12
+v1 = v13 = 0
+1.5.4 Classification Based on the Nature of the Equations Involved
+Another important classification of optimization problems is based on the nature of
+expressions for the objective function and the constraints. According to this classification, optimization problems can be classified as linear, nonlinear, geometric, and
+quadratic programming problems. This classification is extremely useful from the computational point of view since there are many special methods available for the efficient
+solution of a particular class of problems. Thus the first task of a designer would be
+to investigate the class of problem encountered. This will, in many cases, dictate the
+types of solution procedures to be adopted in solving the problem.
+Nonlinear Programming Problem. If any of the functions among the objective and
+constraint functions in Eq. (1.1) is nonlinear, the problem is called a nonlinear programming (NLP) problem. This is the most general programming problem and all other
+problems can be considered as special cases of the NLP problem.
+Example 1.3 The step-cone pulley shown in Fig. 1.10 is to be designed for transmitting a power of at least 0.75 hp. The speed of the input shaft is 350 rpm and the
+output speed requirements are 750, 450, 250, and 150 rpm for a fixed center distance
+of a between the input and output shafts. The tension on the tight side of the belt is to
+be kept more than twice that on the slack side. The thickness of the belt is t and the
+coefficient of friction between the belt and the pulleys is µ. The stress induced in the
+belt due to tension on the tight side is s. Formulate the problem of finding the width
+and diameters of the steps for minimum weight.
+20 Introduction to Optimization
+Figure 1.10 Step-cone pulley.
+SOLUTION The design vector can be taken as
+X =
+
+
+
+d1
+d2
+d3
+d4
+w
+
+
+
+where di
+is the diameter of the ith step on the output pulley and w is the width of the
+belt and the steps. The objective function is the weight of the step-cone pulley system:
+f (X) = ρw
+π
+4
+(d2
+1 + d
+2
+2 + d
+2
+3 + d
+2
+4 + d
+′ 2
+1 + d
+′ 2
+2 + d
+′ 2
+3 + d
+′ 2
+4
+)
+= ρw
+π
+4
+
+d
+2
+1
+
+1 +
+
+
+750
+3502
+
++ d
+2
+2
+
+1 +
+
+
+450
+3502
+
++ d
+2
+3
+
+1 +
+
+
+250
+3502
+
++ d
+2
+4
+
+1 +
+
+
+150
+3502
+ (E1)
+where ρ is the density of the pulleys and d
+′
+i
+is the diameter of the ith step on the input
+pulley.
+1.5 Classification of Optimization Problems 21
+To have the belt equally tight on each pair of opposite steps, the total length of the
+belt must be kept constant for all the output speeds. This can be ensured by satisfying
+the following equality constraints:
+C1 − C2 = 0 (E2)
+C1 − C3 = 0 (E3)
+C1 − C4 = 0 (E4)
+where Ci denotes length of the belt needed to obtain output speed Ni (i = 1, 2, 3, 4)
+and is given by [1.116, 1.117]:
+Ci ≃
+πdi
+2
+
+
+1 +
+Ni
+N
+
++
+
+
+Ni
+N
+− 1
+2
+d
+2
+i
+4a
++ 2a
+where N is the speed of the input shaft and a is the center distance between the shafts.
+The ratio of tensions in the belt can be expressed as [1.116, 1.117]
+T
+i
+1
+T
+i
+2
+= e
+µθi
+where T
+i
+1
+and T
+i
+2
+are the tensions on the tight and slack sides of the ith step, µ the
+coefficient of friction, and θi
+the angle of lap of the belt over the ith pulley step. The
+angle of lap is given by
+θi = π − 2 sin−1
+
+
+
+Ni
+N
+− 1
+
+di
+2a
+
+and hence the constraint on the ratio of tensions becomes
+exp 	
+µ
+
+π − 2 sin−1
+	
+Ni
+N
+− 1
+
+di
+2a
+
+
+ ≥ 2, i = 1, 2, 3, 4 (E5)
+The limitation on the maximum tension can be expressed as
+T
+i
+1 = stw, i = 1, 2, 3, 4 (E6)
+where s is the maximum allowable stress in the belt and t is the thickness of the belt.
+The constraint on the power transmitted can be stated as (using lbf for force and ft for
+linear dimensions)
+(T i
+1 − T
+i
+2
+)πd′
+i
+(350)
+33,000
+≥ 0.75
+which can be rewritten, using T
+i
+1 = stw from Eq. (E6), as
+stw 
+
+1 − exp 
+−µ
+
+
+π − 2 sin−1
+	
+Ni
+N
+− 1
+
+di
+2a
+
+πd′
+i
+×
+
+
+350
+33,000
+≥ 0.75, i = 1, 2, 3, 4 (E7)
+22 Introduction to Optimization
+Finally, the lower bounds on the design variables can be taken as
+w ≥ 0 (E8)
+di ≥ 0, i = 1, 2, 3, 4 (E9)
+As the objective function, (E1), and most of the constraints, (E2) to (E9), are nonlinear
+functions of the design variables d1, d2, d3, d4, and w, this problem is a nonlinear
+programming problem.
+Geometric Programming Problem.
+Definition A function h(X) is called a posynomial if h can be expressed as the sum
+of power terms each of the form
+cix
+ai1
+1
+x
+ai2
+2
+· · · x
+ain
+n
+where ci and aij are constants with ci > 0 and xj > 0. Thus a posynomial with N terms
+can be expressed as
+h(X) = c1x
+a11
+1
+x
+a12
+2
+· · · x
+a1n
+n + · · · + cN x
+aN1
+1
+x
+aN2
+2
+· · · x
+aNn
+n
+(1.7)
+A geometric programming (GMP) problem is one in which the objective function
+and constraints are expressed as posynomials in X. Thus GMP problem can be posed
+as follows [1.59]:
+Find X which minimizes
+f (X) =
+
+N0
+i=1
+ci
+
+
+n
+j=1
+x
+pij
+j
+
+ , ci > 0, xj > 0 (1.8)
+subject to
+gk(X) =
+
+Nk
+i=1
+aik
+
+
+n
+j=1
+x
+qijk
+j
+
+ > 0, aik > 0, xj > 0, k = 1, 2, . . . , m
+where N0 and Nk denote the number of posynomial terms in the objective and kth
+constraint function, respectively.
+Example 1.4 Four identical helical springs are used to support a milling machine
+weighing 5000 lb. Formulate the problem of finding the wire diameter (d), coil diameter
+(D), and the number of turns (N) of each spring (Fig. 1.11) for minimum weight by
+limiting the deflection to 0.1 in. and the shear stress to 10,000 psi in the spring. In
+addition, the natural frequency of vibration of the spring is to be greater than 100 Hz.
+The stiffness of the spring (k), the shear stress in the spring (τ ), and the natural
+frequency of vibration of the spring (fn) are given by
+k =
+d
+4G
+8D3N
+τ = Ks
+8FD
+πd3
+fn =
+1
+2
+
+kg
+w
+=
+1
+2
+
+d
+4G
+8D3N
+g
+ρ(πd2/4)πDN
+=
+√
+Gg d
+2
+√
+2ρπD2N
+1.5 Classification of Optimization Problems 23
+Figure 1.11 Helical spring.
+where G is the shear modulus, F the compressive load on the spring, w the weight of
+the spring, ρ the weight density of the spring, and Ks
+the shear stress correction factor.
+Assume that the material is spring steel with G = 12 × 106 psi and ρ = 0.3 lb/in3
+, and
+the shear stress correction factor is Ks ≈ 1.05.
+SOLUTION The design vector is given by
+X =
+
+
+
+x1
+x2
+x3
+
+
+
+=
+
+
+
+d
+D
+N
+
+
+
+and the objective function by
+f (X) = weight =
+πd2
+4
+πDNρ (E1)
+The constraints can be expressed as
+deflection =
+F
+k
+=
+8FD3N
+d
+4G
+≤ 0.1
+that is,
+g1(X) =
+d
+4G
+80FD3N
+> 1 (E2)
+shear stress = Ks
+8FD
+πd3
+≤ 10,000
+24 Introduction to Optimization
+that is,
+g2(X) =
+1250πd3
+KsFD
+> 1 (E3)
+natural frequency =
+√
+Gg
+2
+√
+2ρπ
+d
+D2N
+≥ 100
+that is,
+g3(X) =
+√
+Gg d
+200√
+2ρπD2N
+> 1 (E4)
+Since the equality sign is not included (along with the inequality symbol, >) in the
+constraints of Eqs. (E2) to (E4), the design variables are to be restricted to positive
+values as
+d > 0, D > 0, N > 0 (E5)
+By substituting the known data, F = weight of the milling machine/4 = 1250 lb, ρ =
+0.3 lb/in3
+, G = 12 × 106 psi, and Ks = 1.05, Eqs. (E1) to (E4) become
+f (X) =
+1
+4
+π
+2
+(0.3)d2DN = 0.7402x
+2
+1
+x2x3 (E6)
+g1(X) =
+d
+4
+(12 × 106
+)
+80(1250)D3N
+= 120x
+4
+1
+x
+−3
+2
+x
+−1
+3 > 1 (E7)
+g2(X) =
+1250πd3
+1.05(1250)D
+= 2.992x
+3
+1
+x
+−1
+2 > 1 (E8)
+g3(X) =
+√
+Gg d
+200√
+2ρπD2N
+= 139.8388x1x
+−2
+2
+x
+−1
+3 > 1 (E9)
+It can be seen that the objective function, f (X), and the constraint functions, g1(X) to
+g3(X), are posynomials and hence the problem is a GMP problem.
+Quadratic Programming Problem. A quadratic programming problem is a nonlinear
+programming problem with a quadratic objective function and linear constraints. It is
+usually formulated as follows:
+F (X) = c +
+n
+i=1
+qixi +
+n
+i=1
+n
+j=1
+Qij xixj (1.9)
+subject to
+n
+i=1
+aij xi = bj , j = 1, 2, . . . , m
+xi ≥ 0, i = 1, 2, . . . , n
+where c, qi, Qij , aij , and bj are constants.
+1.5 Classification of Optimization Problems 25
+Example 1.5 A manufacturing firm produces two products, A and B, using two limited
+resources. The maximum amounts of resources 1 and 2 available per day are 1000 and
+250 units, respectively. The production of 1 unit of product A requires 1 unit of resource
+1 and 0.2 unit of resource 2, and the production of 1 unit of product B requires 0.5
+unit of resource 1 and 0.5 unit of resource 2. The unit costs of resources 1 and 2 are
+given by the relations (0.375 − 0.00005u1) and (0.75 − 0.0001u2), respectively, where
+ui denotes the number of units of resource i used (i = 1, 2). The selling prices per unit
+of products A and B, pA and pB, are given by
+pA = 2.00 − 0.0005xA − 0.00015xB
+pB = 3.50 − 0.0002xA − 0.0015xB
+where xA and xB indicate, respectively, the number of units of products A and B sold.
+Formulate the problem of maximizing the profit assuming that the firm can sell all the
+units it manufactures.
+SOLUTION Let the design variables be the number of units of products A and B
+manufactured per day:
+X =
+	
+xA
+xB
+
+
+The requirement of resource 1 per day is (xA + 0.5xB) and that of resource 2 is
+(0.2xA + 0.5xB) and the constraints on the resources are
+xA + 0.5xB ≤ 1000 (E1)
+0.2xA + 0.5xB ≤ 250 (E2)
+The lower bounds on the design variables can be taken as
+xA ≥ 0 (E3)
+xB ≥ 0 (E4)
+The total cost of resources 1 and 2 per day is
+(xA + 0.5xB)[0.375 − 0.00005(xA + 0.5xB)]
++ (0.2xA + 0.5xB)[0.750 − 0.0001(0.2xA + 0.5xB)]
+and the return per day from the sale of products A and B is
+xA(2.00 − 0.0005xA − 0.00015xB) + xB(3.50 − 0.0002xA − 0.0015xB)
+The total profit is given by the total return minus the total cost. Since the objective
+function to be minimized is the negative of the profit per day, f (X) is given by
+f (X) = (xA + 0.5xB)[0.375 − 0.00005(xA + 0.5xB)]
++ (0.2xA + 0.5xB)[0.750 − 0.0001(0.2xA + 0.5xB)]
+− xA(2.00 − 0.0005xA − 0.00015xB)
+− xB(3.50 − 0.0002xA − 0.0015xB) (E5)
+26 Introduction to Optimization
+As the objective function [Eq. (E5)] is a quadratic and the constraints [Eqs. (E1) to
+(E4)] are linear, the problem is a quadratic programming problem.
+Linear Programming Problem. If the objective function and all the constraints in
+Eq. (1.1) are linear functions of the design variables, the mathematical programming
+problem is called a linear programming (LP) problem. A linear programming problem
+is often stated in the following standard form:
+Find X =
+
+
+
+x1
+x2
+.
+.
+.
+xn
+
+
+
+which minimizes f (X) =
+n
+i=1
+cixi
+subject to the constraints (1.10)
+n
+i=1
+aij xi = bj , j = 1, 2, . . . , m
+xi ≥ 0, i = 1, 2, . . . , n
+where ci, aij , and bj are constants.
+Example 1.6 A scaffolding system consists of three beams and six ropes as shown
+in Fig. 1.12. Each of the top ropes A and B can carry a load of W1, each of the
+middle ropes C and D can carry a load of W2, and each of the bottom ropes E and
+F can carry a load of W3. If the loads acting on beams 1, 2, and 3 are x1, x2, and x3,
+respectively, as shown in Fig. 1.12, formulate the problem of finding the maximum
+Figure 1.12 Scaffolding system with three beams.
+1.5 Classification of Optimization Problems 27
+load (x1 + x2 + x3) that can be supported by the system. Assume that the weights of
+the beams 1, 2, and 3 are w1, w2, and w3, respectively, and the weights of the ropes
+are negligible.
+SOLUTION Assuming that the weights of the beams act through their respective
+middle points, the equations of equilibrium for vertical forces and moments for each
+of the three beams can be written as
+For beam 3:
+TE + TF = x3 + w3
+x3(3l) + w3(2l) − TF (4l) = 0
+For beam 2:
+TC + TD − TE = x2 + w2
+x2(l) + w2(l) + TE(l) − TD(2l) = 0
+For beam 1:
+TA + TB − TC − TD − TF = x1 + w1
+x1(3l) + w1(
+9
+2
+l) − TB(9l) + TC(2l) + TD(4l) + TF (7l) = 0
+where Ti denotes the tension in rope i. The solution of these equations gives
+TF =
+3
+4
+x3 +
+1
+2w3
+TE =
+1
+4
+x3 +
+1
+2w3
+TD =
+1
+2
+x2 +
+1
+8
+x3 +
+1
+2w2 +
+1
+4w3
+TC =
+1
+2
+x2 +
+1
+8
+x3 +
+1
+2w2 +
+1
+4w3
+TB =
+1
+3
+x1 +
+1
+3
+x2 +
+2
+3
+x3 +
+1
+2w1 +
+1
+3w2 +
+5
+9w3
+TA =
+2
+3
+x1 +
+2
+3
+x2 +
+1
+3
+x3 +
+1
+2w1 +
+2
+3w2 +
+4
+9w3
+The optimization problem can be formulated by choosing the design vector as
+X =
+
+
+
+x1
+x2
+x3
+
+
+
+Since the objective is to maximize the total load
+f (X) = −(x1 + x2 + x3) (E1)
+The constraints on the forces in the ropes can be stated as
+TA ≤ W1 (E2)
+TB ≤ W1 (E3)
+TC ≤ W2 (E4)
+28 Introduction to Optimization
+TD ≤ W2 (E5)
+TE ≤ W3 (E6)
+TF ≤ W3 (E7)
+Finally, the nonnegativity requirement of the design variables can be expressed as
+x1 ≥ 0
+x2 ≥ 0
+x3 ≥ 0 (E8)
+Since all the equations of the problem (E1) to (E8), are linear functions of x1, x2, and
+x3, the problem is a linear programming problem.
+1.5.5 Classification Based on the Permissible Values of the Design Variables
+Depending on the values permitted for the design variables, optimization problems can
+be classified as integer and real-valued programming problems.
+Integer Programming Problem. If some or all of the design variables x1, x2, . . . , xn
+of an optimization problem are restricted to take on only integer (or discrete) values,
+the problem is called an integer programming problem. On the other hand, if all the
+design variables are permitted to take any real value, the optimization problem is
+called a real-valued programming problem. According to this definition, the problems
+considered in Examples 1.1 to 1.6 are real-valued programming problems.
+Example 1.7 A cargo load is to be prepared from five types of articles. The weight
+wi
+, volume vi
+, and monetary value ci of different articles are given below.
+Article type wi vi ci
+1 4 9 5
+2 8 7 6
+3 2 4 3
+4 5 3 2
+5 3 8 8
+Find the number of articles xi selected from the ith type (i = 1, 2, 3, 4, 5), so that the
+total monetary value of the cargo load is a maximum. The total weight and volume of
+the cargo cannot exceed the limits of 2000 and 2500 units, respectively.
+SOLUTION Let xi be the number of articles of type i (i = 1 to 5) selected. Since
+it is not possible to load a fraction of an article, the variables xi can take only integer
+values.
+The objective function to be maximized is given by
+f (X) = 5x1 + 6x2 + 3x3 + 2x4 + 8x5 (E1)
+1.5 Classification of Optimization Problems 29
+and the constraints by
+4x1 + 8x2 + 2x3 + 5x4 + 3x5 ≤ 2000 (E2)
+9x1 + 7x2 + 4x3 + 3x4 + 8x5 ≤ 2500 (E3)
+xi ≥ 0 and integral, i = 1, 2, . . . , 5 (E4)
+Since xi are constrained to be integers, the problem is an integer programming
+problem.
+1.5.6 Classification Based on the Deterministic Nature of the Variables
+Based on the deterministic nature of the variables involved, optimization problems can
+be classified as deterministic and stochastic programming problems.
+Stochastic Programming Problem. A stochastic programming problem is an optimization problem in which some or all of the parameters (design variables and/or
+preassigned parameters) are probabilistic (nondeterministic or stochastic). According
+to this definition, the problems considered in Examples 1.1 to 1.7 are deterministic
+programming problems.
+Example 1.8 Formulate the problem of designing a minimum-cost rectangular underreinforced concrete beam that can carry a bending moment M with a probability of at
+least 0.95. The costs of concrete, steel, and formwork are given by Cc = $200/m3
+, Cs =
+$5000/m3
+, and Cf = $40/m2 of surface area. The bending moment M is a probabilistic
+quantity and varies between 1 × 105
+and 2 × 105 N-m with a uniform probability. The
+strengths of concrete and steel are also uniformly distributed probabilistic quantities
+whose lower and upper limits are given by
+fc = 25 and 35 MPa
+fs = 500 and 550 MPa
+Assume that the area of the reinforcing steel and the cross-sectional dimensions of the
+beam are deterministic quantities.
+SOLUTION The breadth b in meters, the depth d in meters, and the area of reinforcing
+steel As
+in square meters are taken as the design variables x1, x2, and x3, respectively
+(Fig. 1.13). The cost of the beam per meter length is given by
+f (X) = cost of steet + cost of concrete + cost of formwork
+= AsCs + (bd − As)Cc + 2(b + d)Cf (E1)
+The resisting moment of the beam section is given by [1.119]
+MR = Asfs
+
+
+d − 0.59
+Asfs
+fcb
+
+30 Introduction to Optimization
+Figure 1.13 Cross section of a reinforced concrete beam.
+and the constraint on the bending moment can be expressed as [1.120]
+P[MR − M ≥ 0] = P
+
+Asfs
+
+
+d − 0.59
+Asfs
+fcb
+
+− M ≥ 0
+
+≥ 0.95 (E2)
+where P[· · ·] indicates the probability of occurrence of the event [· · ·].
+To ensure that the beam remains underreinforced,†
+the area of steel is bounded by
+the balanced steel area A
+(b)
+s as
+As ≤ A
+(b)
+s
+(E3)
+where
+A
+(b)
+s = (0.542)
+fc
+fs
+bd
+600
+600 + fs
+Since the design variables cannot be negative, we have
+d ≥ 0
+b ≥ 0
+As ≥ 0 (E4)
+Since the quantities M, fc, and fs are nondeterministic, the problem is a stochastic
+programming problem.
+1.5.7 Classification Based on the Separability of the Functions
+Optimization problems can be classified as separable and nonseparable programming
+problems based on the separability of the objective and constraint functions.
+†
+If steel area is larger than A
+(b)
+s
+, the beam becomes overreinforced and failure occurs all of a sudden due
+to lack of concrete strength. If the beam is underreinforced, failure occurs due to lack of steel strength and
+hence it will be gradual.
+1.5 Classification of Optimization Problems 31
+Separable Programming Problem.
+Definition A function f (X) is said to be separable if it can be expressed as the sum
+of n single-variable functions, f1(x1), f2(x2), . . . , fn(xn), that is,
+f (X) =
+n
+i=1
+fi(xi) (1.11)
+A separable programming problem is one in which the objective function and the
+constraints are separable and can be expressed in standard form as
+Find X which minimizes f (X) =
+n
+i=1
+fi(xi) (1.12)
+subject to
+gj (X) =
+n
+i=1
+gij (xi) ≤ bj , j = 1, 2, . . . , m
+where bj is a constant.
+Example 1.9 A retail store stocks and sells three different models of TV sets. The
+store cannot afford to have an inventory worth more than $45,000 at any time. The
+TV sets are ordered in lots. It costs $aj for the store whenever a lot of TV model j
+is ordered. The cost of one TV set of model j is cj . The demand rate of TV model
+j is dj units per year. The rate at which the inventory costs accumulate is known to
+be proportional to the investment in inventory at any time, with qj = 0.5, denoting
+the constant of proportionality for TV model j . Each TV set occupies an area of
+sj = 0.40 m2
+and the maximum storage space available is 90 m2
+. The data known from
+the past experience are given below.
+TV model j
+1 2 3
+Ordering cost, aj ($) 50 80 100
+Unit cost, cj ($) 40 120 80
+Demand rate, dj 800 400 1200
+Formulate the problem of minimizing the average annual cost of ordering and storing
+the TV sets.
+SOLUTION Let xj denote the number of TV sets of model j ordered in each lot
+(j = 1, 2, 3). Since the demand rate per year of model j is dj , the number of times
+the TV model j needs to be ordered is dj /xj . The cost of ordering TV model j per
+year is thus aj dj /xj , j = 1, 2, 3. The cost of storing TV sets of model j per year is
+qj cjxj /2 since the average level of inventory at any time during the year is equal to
+32 Introduction to Optimization
+cjxj /2. Thus the objective function (cost of ordering plus storing) can be expressed
+as
+f (X) =
+
+
+a1d1
+x1
++
+q1c1x1
+2
+
++
+
+
+a2d2
+x2
++
+q2c2x2
+2
+
++
+
+
+a3d3
+x3
++
+q3c3x3
+2
+
+(E1)
+where the design vector X is given by
+X =
+
+
+
+x1
+x2
+x3
+
+
+
+(E2)
+The constraint on the worth of inventory can be stated as
+c1x1 + c2x2 + c3x3 ≤ 45,000 (E3)
+The limitation on the storage area is given by
+s1x1 + s2x2 + s3x3 ≤ 90 (E4)
+Since the design variables cannot be negative, we have
+xj ≥ 0, j = 1, 2, 3 (E5)
+By substituting the known data, the optimization problem can be stated as follows:
+Find X which minimizes
+f (X) =
+
+
+40,000
+x1
++ 10x1
+
++
+
+
+32,000
+x2
++ 30x2
+
++
+
+
+120,000
+x3
++ 20x3
+
+(E6)
+subject to
+g1(X) = 40x1 + 120x2 + 80x3 ≤ 45,000 (E7)
+g2(X) = 0.40(x1 + x2 + x3) ≤ 90 (E8)
+g3(X) = −x1 ≤ 0 (E9)
+g4(X) = −x2 ≤ 0 (E10)
+g5(X) = −x3 ≤ 0 (E11)
+It can be observed that the optimization problem stated in Eqs. (E6) to (E11) is a
+separable programming problem.
+1.5.8 Classification Based on the Number of Objective Functions
+Depending on the number of objective functions to be minimized, optimization problems can be classified as single- and multiobjective programming problems. According
+to this classification, the problems considered in Examples 1.1 to 1.9 are single objective
+programming problems.
